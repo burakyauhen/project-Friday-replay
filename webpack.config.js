@@ -21,6 +21,7 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     MiniCssExtractPlugin.loader,
+                    // 'style-loader',
                     'css-loader',
                     {
                         loader: "postcss-loader",
@@ -43,19 +44,26 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg|gif)$/i,               
                 type: 'asset/resource',
+                generator: {
+                    // filename: path.join('images', '[name].[contenthash][ext]'),
+                    filename: 'images/[name][contenthash:8][ext]',
+                },
             },
             {
                 test: /\.svg$/,
+                use: 'svgo-loader',
                 type: 'asset/resource',
                 generator: {
-                    filename: path.join('icons', '[name].[contenthash:8][ext]'),
+                    //   filename: path.join('icons', '[name].[contenthash:8][ext]'),
+                    filename: 'icons/[contenthash:8][ext]',
                 },
             },
             {
                 test: /\.(woff2?|eot|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: path.join('[name].[contenthash:8][ext]'),
+                    // filename: path.join('[name].[contenthash:8][ext]'),
+                    filename: 'fonts/[contenthash:8][ext]',
                 },
             },
         ],
@@ -64,7 +72,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'index.[contenthash:8].js',
-        assetModuleFilename: path.join('images', '[name].[contenthash:8][ext]'),
+        // assetModuleFilename: path.join('images', '[name].[contenthash:8][ext]'),
+        // assetModuleFilename: 'assets/[contenthash:8][ext]',
     },
 
     plugins: [
@@ -82,8 +91,10 @@ module.exports = {
         }),
 
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash:8].css',
-        }),     
+            // filename: '[name].[contenthash:8].css',
+            filename: '[name].css',
+        }),  
+
     ],
 
     devServer: {
@@ -109,3 +120,4 @@ module.exports = {
         ],
     },
 }
+
