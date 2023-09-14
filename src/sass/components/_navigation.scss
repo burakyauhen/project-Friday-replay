@@ -15,7 +15,7 @@
 }
 
 .header__navigation {
-    @include media-tablet {
+    @include media-laptop {
         display: none;
     }
 }

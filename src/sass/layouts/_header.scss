@@ -33,11 +33,10 @@
     >.button {
         margin-left: 14px;
         &:first-child {
-            // margin-left: 14px;
             margin-left: 0;
         }
     }
-    @include media-mobile {
+    @include media-tablet {
         display: none;
     }
 }

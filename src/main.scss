@@ -1,5 +1,5 @@
 //normalize.scss
-// @import "../node_modules/normalize-scss/sass/normalize";
+@import "../node_modules/normalize-scss/sass/normalize";
 
 //Abstract
 @import "./sass/abstract/constants";
@@ -13,6 +13,7 @@
 @import "./sass/base/icons";
 @import "./sass/base/tags";
 @import "./sass/base/hamburger";
+@import "./sass/base/modal";
 
 //Layouts
 @import "./sass/layouts/wrapper";

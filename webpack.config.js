@@ -46,7 +46,9 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     // filename: path.join('images', '[name].[contenthash][ext]'),
-                    filename: 'images/[name][contenthash:8][ext]',
+                    // filename: 'images/[name][contenthash:8][ext]',
+                    filename: 'images/[name][ext]',
+
                 },
             },
             {
@@ -67,6 +69,10 @@ module.exports = {
                 },
             },
         ],
+    },
+
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
     },
 
     output: {

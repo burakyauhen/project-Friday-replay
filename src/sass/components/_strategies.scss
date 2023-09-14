@@ -20,15 +20,10 @@
     }
 }
 
+//Strategy
 .strategy-wrapper {
     >* {
         margin-bottom: 30px;
-        @include media-tablet {
-            flex-basis: 48%;
-        }
-        @include media-mobile {
-            flex-basis: 100%;
-        }
     }
 }
 
@@ -37,6 +32,11 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    min-width: 38rem;
+    width: 100%;
+    &_hidden {
+        display: none;
+    }
     @include media-tablet {
         overflow: hidden;
         padding-top: 200px;
@@ -60,5 +60,27 @@
     @include media-tablet {
         position: absolute;
         top: 0;
+    }
+}
+
+.article-modal__content {
+    .strategy__image {
+        width: 100%;
+        @include media-tablet {
+            position: static;
+        }
+    }
+
+    .strategy__date {
+        @include font ($size: 1.3rem, $weight: normal);
+        margin: 0 0 5px;
+    }
+
+    .strategy__name {
+        margin-bottom: 10px;
+    }
+
+    .strategy__text {
+        margin: 0 0 12px;
     }
 }

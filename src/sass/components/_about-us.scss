@@ -14,13 +14,19 @@ $image-gap: 32px;
 
 .employee-container {
     padding-right: $image-gap;
+    gap: 20px;
 }
 
 .employee {
     display: flex;
     padding: 35px;
     position: relative;
-    width: calc(30% - $image-gap);
+    min-width: 290px;
+    @include media-mobile {
+        min-width: 240px;
+
+    }
+    // max-width: calc(30% - $image-gap);
 }
 
 .employee__name {

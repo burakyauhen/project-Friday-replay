@@ -13,7 +13,7 @@
     position: relative;
     width: 31px;
     height: 25px;
-    @include media-tablet {
+    @include media-laptop {
         display: inline-block;
     }
     &:before {
